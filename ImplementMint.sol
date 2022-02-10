@@ -107,8 +107,6 @@ contract V4TST is IBEP20, Auth {
 
     mapping (address => bool) isFeeExempt;
     mapping (address => bool) isDividendExempt;
-    mapping (address => bool) private _isSniper;
-    mapping (address => uint256) private _transactionBlockLog;
 
     bool public isSecondTokenSet = false;
 
@@ -117,7 +115,6 @@ contract V4TST is IBEP20, Auth {
     uint256 amountSecond = (secondRate ** secondModifier ** secondSpeed);
     uint256 secondModifier = 1;
 
-    address public autoLiquidityReceiver;
     address public businessFeeReceiver;
 
     IDEXRouter public router;
